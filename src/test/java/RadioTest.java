@@ -77,6 +77,7 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldSetPrevStation9() {
         Radio station = new Radio();
@@ -85,6 +86,18 @@ public class RadioTest {
         //station.prevStation();
 
         int expected = 8;
+        int actual = station.prevStation();
+
+        Assertions.assertEquals(expected, actual);
+    }
+    @Test
+    public void shouldSetPrevStation10() {
+        Radio station = new Radio();
+
+        station.setCurrentStation(10);
+        //station.prevStation();
+
+        int expected = 9;
         int actual = station.prevStation();
 
         Assertions.assertEquals(expected, actual);
