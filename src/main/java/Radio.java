@@ -1,3 +1,8 @@
+import lombok.Getter;
+import lombok.Setter;
+
+@Setter
+@Getter
 public class Radio {
     private int maxStation = 9;
     private int minStation = 0;
@@ -13,20 +18,6 @@ public class Radio {
 
 
     private int currentStation;
-
-    public int getCurrentStation() {
-        return currentStation;
-    }
-
-    public void setCurrentStation(int newCurrentStation) {
-        if (newCurrentStation < minStation) {
-            return;
-        }
-        if (newCurrentStation > maxStation) {
-            return;
-        }
-        currentStation = newCurrentStation;
-    }
 
     public int nextStation() {
         if (currentStation < maxStation) {
@@ -48,20 +39,6 @@ public class Radio {
 
 
     private int currentVolume;
-
-    public int getCurrentVolume() {
-        return currentVolume;
-    }
-
-    public void setCurrentVolume(int newCurrentVolume) {
-        if (newCurrentVolume < minVolume) {
-            return;
-        }
-        if (newCurrentVolume > maxVolume) {
-            return;
-        }
-        currentVolume = newCurrentVolume;
-    }
 
     public int volumeUp() {
         if (currentVolume < maxVolume) {
