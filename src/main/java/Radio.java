@@ -18,17 +18,17 @@ public class Radio {
     public int nextStation() {
         if (currentStation < 9) {
             currentStation = currentStation + 1;
-        }
-        else {currentStation = 0;
+        } else {
+            currentStation = 0;
         }
         return currentStation;
     }
 
     public int prevStation() {
-        if (currentStation <=9){
-            currentStation = currentStation - 1;
-        }
-        if (currentStation < 0)  {
+        currentStation = currentStation - 1;
+        //if (currentStation <=9){
+        // currentStation = currentStation - 1;
+        if (currentStation < 0) {
             currentStation = 9;
         }
         return currentStation;
@@ -36,8 +36,8 @@ public class Radio {
     }
 
 
-
     private int currentVolume;
+
     public int getCurrentVolume() {
         return currentVolume;
     }
@@ -63,9 +63,9 @@ public class Radio {
     }
 
     public int volumeDown() {
-        if (currentVolume <= 100) {
-            currentVolume = currentVolume - 1;
-        }
+        currentVolume = currentVolume - 1;
+        //if (currentVolume <= 100) {
+        //currentVolume = currentVolume - 1;
         if (currentVolume < 0) {
             currentVolume = 0;
         }
