@@ -3,16 +3,17 @@ public class Radio {
     private int minStation = 0;
     private int maxVolume = 100;
     private int minVolume = 0;
-
-    public Radio (int size){
-        int maxStation = size-1;
-    }
-    public Radio (){
-
-    }
-
-
     private int currentStation;
+    private int currentVolume;
+
+    public Radio(int size) {
+        int maxStation = size - 1;
+    }
+
+    public Radio() {
+
+    }
+
 
     public int getCurrentStation() {
         return currentStation;
@@ -47,8 +48,6 @@ public class Radio {
     }
 
 
-    private int currentVolume;
-
     public int getCurrentVolume() {
         return currentVolume;
     }
@@ -68,7 +67,7 @@ public class Radio {
             currentVolume = currentVolume + 1;
         }
         //if (currentVolume >= maxVolume) {
-           else {
+        else {
             currentVolume = maxVolume;
         }
         return currentVolume;
