@@ -1,23 +1,53 @@
-import lombok.Getter;
-import lombok.Setter;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Setter
-@Getter
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+
 public class Radio {
     private int maxStation = 9;
     private int minStation = 0;
     private int maxVolume = 100;
     private int minVolume = 0;
-
-    public Radio (int size){
-        int maxStation = size-1;
-    }
-    public Radio (){
-
-    }
-
-
     private int currentStation;
+    private int currentVolume;
+
+    //public Radio() {
+   // }
+
+    public Radio(int size) {
+        this.maxStation = size - 1;
+    }
+
+    public int getCurrentStation() {
+        return currentStation;
+    }
+
+    public int getCurrentVolume() {
+        return currentVolume;
+    }
+
+    public void setCurrentStation(int newCurrentStation) {
+        if (newCurrentStation < minStation) {
+            return;
+        }
+        if (newCurrentStation > maxStation) {
+            return;
+        }
+        currentStation = newCurrentStation;
+    }
+
+    public void setCurrentVolume(int newCurrentVolume) {
+        if (newCurrentVolume < minVolume) {
+            return;
+        }
+        if (newCurrentVolume > maxVolume) {
+            return;
+        }
+        currentVolume = newCurrentVolume;
+    }
 
     public int nextStation() {
         if (currentStation < maxStation) {
@@ -37,15 +67,12 @@ public class Radio {
 
     }
 
-
-    private int currentVolume;
-
     public int volumeUp() {
         if (currentVolume < maxVolume) {
             currentVolume = currentVolume + 1;
         }
         //if (currentVolume >= maxVolume) {
-           else {
+        else {
             currentVolume = maxVolume;
         }
         return currentVolume;
