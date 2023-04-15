@@ -21,13 +21,13 @@ public class Radio {
         this.maxStation = size - 1;
     }
 
-    public int getCurrentStation() {
-        return currentStation;
-    }
+    //public int getCurrentStation() {
+     //   return currentStation;
+    //}
 
-    public int getCurrentVolume() {
-        return currentVolume;
-    }
+   // public int getCurrentVolume() {
+   //     return currentVolume;
+   // }
 
     public void setCurrentStation(int newCurrentStation) {
         if (newCurrentStation < minStation) {
